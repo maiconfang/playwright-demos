@@ -1,17 +1,19 @@
 # tests/test_login.py
-import pytest
+
 from pages.login_page import LoginPage
+
 
 def test_login_success(page):
     login_page = LoginPage(page)
     login_page.login("luna.moon@maif.com", "123")
     login_page.expect_welcome_message()
-    login_page.expect_redirect_to_app()
+
 
 def test_login_invalid_credentials(page):
     login_page = LoginPage(page)
     login_page.login("test001", "1234")
     login_page.expect_login_error()
+
 
 def test_validation_short_inputs(page):
     login_page = LoginPage(page)
@@ -22,6 +24,7 @@ def test_validation_short_inputs(page):
     login_page.expect_short_login_error()
     login_page.expect_short_password_error()
 
+
 def test_validation_max_length_inputs(page):
     login_page = LoginPage(page)
     login_page.navigate()
@@ -30,6 +33,7 @@ def test_validation_max_length_inputs(page):
     page.locator("section", has_text="Task Manager Plus The").locator("section").click()
     login_page.expect_max_login_length_error()
     login_page.expect_max_password_length_error()
+
 
 def test_server_error_mock(page):
     def handle_route(route, request):

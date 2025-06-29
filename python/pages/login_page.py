@@ -6,7 +6,7 @@ class LoginPage:
         self.page = page
 
     def navigate(self):
-        self.page.goto("/#/login")
+        self.page.goto("http://localhost:4200/#/login")
 
     def fill_username(self, username: str):
         self.page.get_by_role("textbox", name="Login").fill(username)
