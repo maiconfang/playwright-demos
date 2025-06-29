@@ -1,6 +1,6 @@
 # tests/test_login.py
 
-from pages.login_page import LoginPage
+from src.pages.login_page import LoginPage
 
 
 def test_login_success(page):
