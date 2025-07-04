@@ -1,0 +1,35 @@
+
+# Build results
+bin/
+obj/
+
+# JetBrains / Rider / PyCharm
+.idea/
+*.iml
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Playwright output
+test-results/
+playwright-report/
+trace.zip
+*.mp4
+*.webm
+
+# Python workspace configs
+python/.idea/
+python/.venv/
+
+# Temporary or duplicated folders
+net/

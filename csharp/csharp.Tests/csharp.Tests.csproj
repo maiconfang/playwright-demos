@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <!-- OutputType can remain as (Exe) or be removed; it does not affect test execution -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Playwright + NUnit (already present) -->
+        <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.53.0" />
+
+        <!-- 🔑 .NET test engine -->
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+
+        <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+    <Playwright>
+        <LaunchOptions>
+            <Headless>false</Headless>   <!-- 👈 visible browser -->
+            <SlowMo>100</SlowMo>         <!-- 👈 visible animations (100ms per action) -->
+        </LaunchOptions>
+    </Playwright>
+</RunSettings>
