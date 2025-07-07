@@ -56,41 +56,65 @@ npx playwright install
 
 ## ▶️ Running the Tests
 
-### Run all tests (headless by default)
+### ✅ Run all tests (headless by default)
 
 ```bash
 npx playwright test
 ```
 
-### Run with browser visible (headed mode)
+### 🧪 Run with browser visible (headed mode)
 
 ```bash
 npx playwright test --headed
 ```
 
-### Run a specific test file
+### 📁 Run a specific test file
 
 ```bash
 npx playwright test tests/login.spec.ts
 ```
 
-### Run a specific test by its title
+### 🔍 Run a specific test by its title
 
 ```bash
 npx playwright test -g "should login successfully and redirect to app page"
 ```
 
-You can copy the test name exactly from `login.spec.ts` to run just that one.
+### 🌐 Run only in Chrome (Chromium)
+
+```bash
+npx playwright test --project=chromium
+```
+
+### 🦊 Run only in Firefox
+
+```bash
+npx playwright test --project=firefox
+```
+
+### 🧭 Run only in WebKit (Safari/Edge)
+
+```bash
+npx playwright test --project=webkit
+```
+
+### 👁️ Run specific test in Chrome and headed mode
+
+```bash
+npx playwright test tests/login.spec.ts --project=chromium --headed -g "should login successfully and redirect to app page"
+```
 
 ---
 
 ## 📊 View HTML Test Report
 
-After running the tests, generate the report with:
+### Generate and open the HTML report
 
 ```bash
 npx playwright show-report
 ```
+
+> After running your tests, this command opens a detailed report in the browser.
 
 ---
 
