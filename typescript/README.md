@@ -4,6 +4,15 @@ This project demonstrates end-to-end (E2E) test automation using **Playwright** 
 
 ---
 
+## 🤖 What is Playwright?
+
+Playwright is a framework for automated **end-to-end testing** of web applications.  
+It simulates real user actions—like clicking buttons, typing into forms, and navigating pages—across multiple browsers (Chrome, Firefox, Safari).
+
+It's a powerful tool to ensure your app works as expected from the user's perspective.
+
+---
+
 ## 🚀 Features
 
 - Login validation with multiple scenarios
