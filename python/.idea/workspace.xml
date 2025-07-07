@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ee2fe25-74de-4ac8-aa66-39a565dcad66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../csharp/csharp.Tests/playwright.runsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../csharp/csharp.Tests/src/core/TestConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../csharp/csharp.Tests/src/pages/LoginPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../csharp/csharp.Tests/tests/LoginTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../csharp/csharp.Tests/tests/ManualBrowserTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1ee2fe25-74de-4ac8-aa66-39a565dcad66" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
