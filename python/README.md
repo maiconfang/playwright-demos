@@ -1,3 +1,4 @@
+
 # 🧪 Python Playwright Login Test Project
 
 This is a simple end-to-end (E2E) testing project using [Playwright](https://playwright.dev/python/) with Python and Pytest. The goal is to test the login functionality of a web application hosted at `http://localhost:4200/#/login`.
@@ -15,6 +16,7 @@ This is a simple end-to-end (E2E) testing project using [Playwright](https://pla
 - `requirements.txt` with essential dependencies
 - Custom assertions and error handling for login scenarios
 - Allure reporting integration
+- 🖼️ Automatic screenshot attachment on test failure using Allure
 
 ---
 
@@ -141,6 +143,10 @@ allure serve allure-results
 ```
 
 This will open an interactive and detailed report in your browser.
+
+### 🖼️ Automatically attach screenshot on test failure
+
+Implemented in `conftest.py` using `pytest_runtest_makereport`. When a test fails, a screenshot is captured and embedded into the Allure report.
 
 ---
 
