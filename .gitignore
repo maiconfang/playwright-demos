@@ -38,3 +38,7 @@ net/
 # Allure output (do not commit)
 python/allure-results/
 python/allure-report/
+
+# Python bytecode cache
+__pycache__/
+*.pyc

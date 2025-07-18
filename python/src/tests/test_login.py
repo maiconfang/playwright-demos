@@ -1,4 +1,5 @@
 # tests/test_login.py
+import allure
 
 # from src.pages.login_page import LoginPage
 from pages.login_page import LoginPage
@@ -8,6 +9,25 @@ def test_login_success(page):
     login_page = LoginPage(page)
     login_page.login("luna.moon@maif.com", "123")
     login_page.expect_welcome_message()
+
+
+@allure.title("Login with correct credentials using Allure annotations")
+@allure.epic("Login")
+@allure.feature("Authentication Flow")
+@allure.story("User logs in with valid credentials")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "maicon.fang")
+def test_login_success_allure(page):
+    login_page = LoginPage(page)
+
+    with allure.step("Step 1: Navigate to login page"):
+        login_page.navigate()
+
+    with allure.step("Step 2: Submit login credentials"):
+        login_page.login("luna.moon@maif.com", "123")
+
+    with allure.step("Step 3: Validate successful login message"):
+        login_page.expect_welcome_message()
 
 
 def test_login_invalid_credentials(page):
@@ -51,8 +71,19 @@ def test_server_error_mock(page):
     login_page.expect_server_not_found_error()
 
 
+
+@allure.title("Intentional failure demo for Allure reporting")
+@allure.epic("Demo")
+@allure.feature("Failure Scenarios")
+@allure.story("Test fails on purpose to show how Allure handles errors")
+@allure.severity(allure.severity_level.MINOR)
+@allure.label("owner", "maicon.fang")
 def test_intentional_failure_demo(page):
     login_page = LoginPage(page)
-    login_page.navigate()
-    # This test will fail on purpose to demonstrate test reports
-    assert False, "Intentional failure: this is for demo purposes only"
+
+    with allure.step("Step 1: Navigate to login page"):
+        login_page.navigate()
+
+    with allure.step("Step 2: Fail on purpose"):
+        assert False, "❌ Intentional failure: this is for demo purposes only"
+
