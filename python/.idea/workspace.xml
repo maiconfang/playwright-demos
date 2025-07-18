@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ee2fe25-74de-4ac8-aa66-39a565dcad66" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/configs/config_local.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/config_prod.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/config_staging.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/fixtures/auth_fixtures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/fixtures/db_fixtures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/login/test_login_parametrizado.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/tasks/test_task_filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/users/test_user_crud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/login/test_login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +66,13 @@
       <recent name="C:\Desenvolvimento\workspace\playwright\playwright-demos\python\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Desenvolvimento\workspace\playwright\playwright-demos\python\src\tests\login" />
       <recent name="C:\Desenvolvimento\workspace\playwright\playwright-demos\python\src" />
       <recent name="C:\Desenvolvimento\workspace\playwright\playwright-demos\python\tests" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Python tests for test_login.test_login_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.login.test_login.test_login_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,13 +82,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_login.test_login_success&quot;" />
+      <option name="_new_target" value="&quot;tests.login.test_login.test_login_success&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_login.test_login_success" />
+        <item itemvalue="Python tests.Python tests for tests.login.test_login.test_login_success" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +107,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/tests/test_login.py</url>
+          <url>file://$PROJECT_DIR$/src/tests/login/test_login.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

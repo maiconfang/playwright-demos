@@ -2,7 +2,7 @@
 
 from playwright.sync_api import Page, expect
 from core.base_page import BasePage
-from core.config import settings
+# from core.config import settings
 
 
 class LoginPage(BasePage):
@@ -11,8 +11,8 @@ class LoginPage(BasePage):
     _enter_button = ("button", "Enter")
 
     def navigate(self) -> None:
-        """Navigate directly to the login route using BasePage's goto."""
-        self.goto(settings.login_path)
+        """Navigate directly to the login page using base_url."""
+        self.goto()  # Default path is "", which means base_url will be used
 
     def fill_username(self, username: str) -> None:
         role, name = self._username_field
@@ -38,8 +38,11 @@ class LoginPage(BasePage):
     def expect_redirect_to_app(self) -> None:
         expect(self.page).to_have_url(r".*#\/app$")
 
-    def expect_login_error(self) -> None:
-        expect(self.page.get_by_role("alert", name="Invalid username or password")).to_be_visible()
+    # def expect_login_error(self) -> None:
+    #     expect(self.page.get_by_role("alert", name="Invalid username or password")).to_be_visible()
+
+    def expect_login_error(self, message: str = "Invalid username or password") -> None:
+        expect(self.page.get_by_role("alert", name=message)).to_be_visible()
 
     def expect_short_login_error(self) -> None:
         expect(

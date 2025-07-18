@@ -1,20 +1,23 @@
 
 # 🧪 Python Playwright Login Test Project
 
-This is a simple end-to-end (E2E) testing project using [Playwright](https://playwright.dev/python/) with Python and Pytest. The goal is to test the login functionality of a web application hosted at `http://localhost:4200/#/login`.
+This is a complete end-to-end (E2E) testing project using [Playwright](https://playwright.dev/python/) with Python and Pytest. The goal is to test the login functionality and other core features of a web application using modern QA best practices.
 
 ---
 
 ## ✅ Features included
 
-- Organized structure with `core`, `pages`, and `tests` inside `src/`
+- Modular structure with `core`, `pages`, and `tests` inside `src/`
 - Page Object Model implemented in `pages/login_page.py`
-- Shared logic and configuration in `core/base_page.py` and `core/config.py`
-- Automated login tests in `tests/test_login.py`
-- Pytest configuration via `pytest.ini` (`src` is used as PYTHONPATH)
+- Shared base logic in `core/base_page.py`
+- Dynamic environment-based configuration via `core/config.py` and JSON files in `/configs`
+- Environment options: `local`, `staging`, `prod`
+- Automatic config loading using the `ENV` variable
+- Automated login, task, and user CRUD tests in organized subfolders
+- Fixtures separated in `tests/fixtures/` for reuse
+- Pytest configuration via `pytest.ini` (`src` as PYTHONPATH)
 - Compatible with Python 3.13.5
 - `requirements.txt` with essential dependencies
-- Custom assertions and error handling for login scenarios
 - Allure reporting integration
 - 🖼️ Automatic screenshot attachment on test failure using Allure
 
@@ -24,6 +27,11 @@ This is a simple end-to-end (E2E) testing project using [Playwright](https://pla
 
 ```
 python/
+│
+├── configs/
+│   ├── config_local.json
+│   ├── config_staging.json
+│   └── config_prod.json
 │
 ├── src/
 │   ├── core/
@@ -36,34 +44,43 @@ python/
 │   │   └── login_page.py
 │   │
 │   └── tests/
-│       ├── __init__.py
 │       ├── conftest.py
-│       └── test_login.py
+│       ├── fixtures/
+│       │   ├── auth_fixtures.py
+│       │   └── db_fixtures.py
+│       ├── login/
+│       │   ├── test_login.py
+│       │   └── test_login_parametrizado.py
+│       ├── tasks/
+│       │   └── test_task_filters.py
+│       └── users/
+│           └── test_user_crud.py
 │
 ├── pytest.ini
 ├── requirements.txt
-└── README.md
+├── README.md
+└── report.html
 ```
 
 ---
 
 ## ▶️ How to run the tests
 
-Make sure the app is running at `http://localhost:4200/#/login`, and that your virtual environment is activated.
+Make sure the app is running (e.g., `http://localhost:4200/#/login`), and that your virtual environment is activated.
 
 ### 🔹 Run all tests:
 ```bash
 pytest --browser chromium
 ```
 
-### 🔹 Run all tests in a file:
+### 🔹 Run all tests in a specific file:
 ```bash
-pytest src/tests/test_login.py --browser chromium
+pytest src/tests/login/test_login.py --browser chromium
 ```
 
 ### 🔹 Run a specific test function:
 ```bash
-pytest src/tests/test_login.py::test_login_success --browser chromium
+pytest src/tests/login/test_login.py::test_login_success --browser chromium
 ```
 
 ### 🔹 Run tests by keyword (partial name):
@@ -106,16 +123,21 @@ pytest --browser chromium --headed
 
 ---
 
-## 🔄 Run in background (Windows PowerShell / Linux / macOS):
+## 🌍 Run with environment configs
 
-```bash
-nohup pytest --browser chromium > log.txt 2>&1 &
+### 🔸 Windows (PowerShell):
+```powershell
+$env:ENV = "staging"
+pytest --browser chromium
 ```
 
-> Or use `&` at the end in PowerShell:
+### 🔸 Linux/macOS:
 ```bash
-Start-Process pytest -ArgumentList "--browser", "chromium"
+export ENV=staging
+pytest --browser chromium
 ```
+
+> Defaults to `local` if `ENV` is not set.
 
 ---
 
@@ -127,7 +149,7 @@ Start-Process pytest -ArgumentList "--browser", "chromium"
 
 Make sure `allure` is available in your system PATH.
 
-### 🔸 Add allure-pytest to requirements.txt:
+### 🔸 Add to requirements.txt:
 ```
 allure-pytest==2.14.3
 ```
@@ -141,8 +163,6 @@ pytest --alluredir=allure-results --browser chromium
 ```bash
 allure serve allure-results
 ```
-
-This will open an interactive and detailed report in your browser.
 
 ### 🖼️ Automatically attach screenshot on test failure
 
@@ -177,9 +197,9 @@ pytest --html=report.html --self-contained-html --browser chromium
 ## 🧠 Notes
 
 - `pytest.ini` ensures the `src` folder is in the Python path.
-- All imports use relative paths like `from core...` and `from pages...`.
-- The project follows clean test automation practices using Page Object Model.
-- Allure reporting is highly recommended for professional, readable, and shareable test reports.
+- Configuration files in `/configs` allow dynamic behavior per environment.
+- The project uses clean test architecture with Page Object Model, fixtures, and Allure integration.
+- Ideal for scalable QA automation in modern projects.
 
 ---
 

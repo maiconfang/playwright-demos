@@ -1,0 +1,6 @@
+{
+  "base_url": "http://localhost:4200/#/login",
+  "username": "luna.moon@maif.com",
+  "password": "123",
+  "timeout": 5000
+}

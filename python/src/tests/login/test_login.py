@@ -3,6 +3,7 @@ import allure
 
 # from src.pages.login_page import LoginPage
 from pages.login_page import LoginPage
+from core.config import Config
 
 
 def test_login_success(page):
@@ -18,13 +19,14 @@ def test_login_success(page):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.label("owner", "maicon.fang")
 def test_login_success_allure(page):
+    config = Config()
     login_page = LoginPage(page)
 
     with allure.step("Step 1: Navigate to login page"):
         login_page.navigate()
 
     with allure.step("Step 2: Submit login credentials"):
-        login_page.login("luna.moon@maif.com", "123")
+        login_page.login(config.get("username"), config.get("password"))
 
     with allure.step("Step 3: Validate successful login message"):
         login_page.expect_welcome_message()
