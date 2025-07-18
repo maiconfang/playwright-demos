@@ -170,6 +170,28 @@ Implemented in `conftest.py` using `pytest_runtest_makereport`. When a test fail
 
 ---
 
+
+## ⚙️ Configuration (config_local.json)
+
+The project reads configuration values such as `base_url`, `username`, `password`, and `timeout` from the file:
+
+```
+configs/config_local.json
+```
+
+Example:
+```json
+{
+  "base_url": "http://localhost:4200",
+  "username": "luna.moon@maif.com",
+  "password": "123",
+  "timeout": 5000
+}
+```
+
+These values are automatically loaded and used in test cases such as login. You can change the behavior per environment using the `ENV` variable (e.g., `local`, `staging`, `prod`).
+
+
 ## 🧪 Additional commands
 
 ### 🔸 Install dependencies:
