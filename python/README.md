@@ -4,15 +4,16 @@ This is a simple end-to-end (E2E) testing project using [Playwright](https://pla
 
 ---
 
-## ✅ Features included so far
+## ✅ Features included
 
-- Project structured with `core`, `pages`, and `tests` folders
+- Organized structure with `core`, `pages`, and `tests` inside `src/`
 - Page Object Model implemented in `pages/login_page.py`
-- Base layer setup in `core/base_page.py` and configuration in `core/config.py`
-- Automated login test located in `tests/test_login.py`
-- Pytest configuration through `pytest.ini`
-- Virtual environment with Python 3.13.5
+- Shared logic and configuration in `core/base_page.py` and `core/config.py`
+- Automated login tests in `tests/test_login.py`
+- Pytest configuration via `pytest.ini` (`src` is used as PYTHONPATH)
+- Compatible with Python 3.13.5
 - `requirements.txt` with essential dependencies
+- Custom assertions and error handling for login scenarios
 
 ---
 
@@ -32,6 +33,7 @@ python/
 │   │   └── login_page.py
 │   │
 │   └── tests/
+│       ├── __init__.py
 │       ├── conftest.py
 │       └── test_login.py
 │
@@ -44,32 +46,106 @@ python/
 
 ## ▶️ How to run the tests
 
-Make sure the web application server is running at `http://localhost:4200/#/login`. Then, in the project terminal (with the virtual environment activated), run:
+Make sure the app is running at `http://localhost:4200/#/login`, and that your virtual environment is activated.
 
+### 🔹 Run all tests:
 ```bash
-pytest -p no:warnings -s -v src/tests/test_login.py
+pytest --browser chromium
 ```
 
-> This will run the login test with full output and no warnings.
+### 🔹 Run all tests in a file:
+```bash
+pytest src/tests/test_login.py --browser chromium
+```
+
+### 🔹 Run a specific test function:
+```bash
+pytest src/tests/test_login.py::test_login_success --browser chromium
+```
+
+### 🔹 Run tests by keyword (partial name):
+```bash
+pytest -k "success" --browser chromium
+```
 
 ---
 
-## 💡 Additional tips
+## 🌐 Run in specific browsers
 
-- To install the project dependencies, run:
+### 🔸 Chromium:
+```bash
+pytest --browser chromium
+```
 
+### 🔸 Firefox:
+```bash
+pytest --browser firefox
+```
+
+### 🔸 WebKit:
+```bash
+pytest --browser webkit
+```
+
+---
+
+## ⚙️ Run in headless or headed mode
+
+### 🔹 Headless (default):
+```bash
+pytest --browser chromium
+```
+
+### 🔹 Headed (UI visible):
+```bash
+pytest --browser chromium --headed
+```
+
+---
+
+## 🔄 Run in background (Windows PowerShell / Linux / macOS):
+
+```bash
+nohup pytest --browser chromium > log.txt 2>&1 &
+```
+
+> Or use `&` at the end in PowerShell:
+```bash
+Start-Process pytest -ArgumentList "--browser", "chromium"
+```
+
+---
+
+## 🧪 Additional commands
+
+### 🔸 Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-- To run all tests inside the folder:
-
+### 🔸 Run all tests with full output:
 ```bash
-pytest -p no:warnings -s -v src/tests/
+pytest -s -v --browser chromium
 ```
 
-- To generate an optional HTML report:
-
+### 🔸 Run with no warnings:
 ```bash
-pytest --html=report.html --self-contained-html -p no:warnings -s -v src/tests/
+pytest -p no:warnings --browser chromium
 ```
+
+### 🔸 Generate HTML report:
+```bash
+pytest --html=report.html --self-contained-html --browser chromium
+```
+
+---
+
+## 🧠 Notes
+
+- `pytest.ini` ensures the `src` folder is in the Python path.
+- All imports use relative paths like `from core...` and `from pages...`.
+- The project follows clean test automation practices using Page Object Model.
+
+---
+
+Happy testing! 🚀

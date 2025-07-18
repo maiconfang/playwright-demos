@@ -1,8 +1,8 @@
 # src/pages/login_page.py
 
 from playwright.sync_api import Page, expect
-from src.core.base_page import BasePage
-from src.core.config import settings
+from core.base_page import BasePage
+from core.config import settings
 
 
 class LoginPage(BasePage):
