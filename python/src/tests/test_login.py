@@ -49,3 +49,10 @@ def test_server_error_mock(page):
     login_page = LoginPage(page)
     login_page.login("luna.moon@maif.com", "123")
     login_page.expect_server_not_found_error()
+
+
+def test_intentional_failure_demo(page):
+    login_page = LoginPage(page)
+    login_page.navigate()
+    # This test will fail on purpose to demonstrate test reports
+    assert False, "Intentional failure: this is for demo purposes only"

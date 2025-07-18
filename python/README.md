@@ -14,6 +14,7 @@ This is a simple end-to-end (E2E) testing project using [Playwright](https://pla
 - Compatible with Python 3.13.5
 - `requirements.txt` with essential dependencies
 - Custom assertions and error handling for login scenarios
+- Allure reporting integration
 
 ---
 
@@ -116,6 +117,33 @@ Start-Process pytest -ArgumentList "--browser", "chromium"
 
 ---
 
+## 📊 Allure Report (recommended)
+
+### 🔸 Install Allure CLI (only once):
+- On Windows: `choco install allure` (via Chocolatey)
+- Or manually download from: https://github.com/allure-framework/allure2/releases
+
+Make sure `allure` is available in your system PATH.
+
+### 🔸 Add allure-pytest to requirements.txt:
+```
+allure-pytest==2.14.3
+```
+
+### 🔸 Generate test results:
+```bash
+pytest --alluredir=allure-results --browser chromium
+```
+
+### 🔸 Serve the report locally:
+```bash
+allure serve allure-results
+```
+
+This will open an interactive and detailed report in your browser.
+
+---
+
 ## 🧪 Additional commands
 
 ### 🔸 Install dependencies:
@@ -133,7 +161,7 @@ pytest -s -v --browser chromium
 pytest -p no:warnings --browser chromium
 ```
 
-### 🔸 Generate HTML report:
+### 🔸 Generate HTML report (basic):
 ```bash
 pytest --html=report.html --self-contained-html --browser chromium
 ```
@@ -145,6 +173,7 @@ pytest --html=report.html --self-contained-html --browser chromium
 - `pytest.ini` ensures the `src` folder is in the Python path.
 - All imports use relative paths like `from core...` and `from pages...`.
 - The project follows clean test automation practices using Page Object Model.
+- Allure reporting is highly recommended for professional, readable, and shareable test reports.
 
 ---
 

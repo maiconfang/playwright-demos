@@ -33,3 +33,8 @@ python/.venv/
 
 # Temporary or duplicated folders
 net/
+
+
+# Allure output (do not commit)
+python/allure-results/
+python/allure-report/
