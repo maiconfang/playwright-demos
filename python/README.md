@@ -68,7 +68,7 @@ python/
 
 Make sure the app is running (e.g., `http://localhost:4200/#/login`), and that your virtual environment is activated.
 
-### Chromium
+### 🔸 Chromium
 
 **Run all tests (headless by default)**
 ```bash
@@ -87,7 +87,7 @@ pytest src/tests/login/test_login.py::test_login_success --browser chromium
 ```
 
 
-### Firefox
+### 🔸 Firefox
 
 **Run all tests (headless by default)**
 ```bash
@@ -105,7 +105,7 @@ pytest src/tests/login/test_login.py --browser firefox
 pytest src/tests/login/test_login.py::test_login_success --browser firefox
 ```
 
-### WebKit
+### 🔸 WebKit
 
 **Run all tests (headless by default)**
 ```bash
