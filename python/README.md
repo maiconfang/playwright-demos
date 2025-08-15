@@ -64,61 +64,64 @@ python/
 
 ---
 
-## ▶️ How to run the tests
+## ▶️ How to run the tests - Browser-specific commands (copy & paste)
 
 Make sure the app is running (e.g., `http://localhost:4200/#/login`), and that your virtual environment is activated.
 
-### 🔹 Run all tests:
+### Chromium
+
+**Run all tests (headless by default)**
 ```bash
 pytest --browser chromium
 ```
 
-### 🔹 Run all tests in a specific file:
+**Headed mode (see the browser)**
+```bash
+pytest --browser chromium --headed
+```
+
+**Run a specific file/test**
 ```bash
 pytest src/tests/login/test_login.py --browser chromium
-```
-
-### 🔹 Run a specific test function:
-```bash
 pytest src/tests/login/test_login.py::test_login_success --browser chromium
-```
-
-### 🔹 Run tests by keyword (partial name):
-```bash
-pytest -k "success" --browser chromium
 ```
 
 ---
 
-## 🌐 Run in specific browsers
+### Firefox
 
-### 🔸 Chromium:
-```bash
-pytest --browser chromium
-```
-
-### 🔸 Firefox:
+**Run all tests (headless by default)**
 ```bash
 pytest --browser firefox
 ```
 
-### 🔸 WebKit:
+**Headed mode (see the browser)**
+```bash
+pytest --browser firefox --headed
+```
+
+**Run a specific file/test**
+```bash
+pytest src/tests/login/test_login.py --browser firefox
+pytest src/tests/login/test_login.py::test_login_success --browser firefox
+```
+
+### WebKit
+
+**Run all tests (headless by default)**
 ```bash
 pytest --browser webkit
 ```
 
----
-
-## ⚙️ Run in headless or headed mode
-
-### 🔹 Headless (default):
+**Headed mode (see the browser)**
 ```bash
-pytest --browser chromium
+pytest --browser webkit --headed
 ```
 
-### 🔹 Headed (UI visible):
+**Run a specific file/test**
 ```bash
-pytest --browser chromium --headed
+pytest src/tests/login/test_login.py --browser webkit
+pytest src/tests/login/test_login.py::test_login_success --browser webkit
 ```
 
 ---
