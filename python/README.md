@@ -86,7 +86,6 @@ pytest src/tests/login/test_login.py --browser chromium
 pytest src/tests/login/test_login.py::test_login_success --browser chromium
 ```
 
----
 
 ### Firefox
 
